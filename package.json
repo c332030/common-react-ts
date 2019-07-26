@@ -1,0 +1,17 @@
+{
+  "name": "@c332030/common-react-ts",
+  "version": "1.0.0",
+  "description": "common-react-ts",
+  "main": "build/index.d.ts",
+  "author": "c332030",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@types/node": "^12.6.2",
+    "@types/react": "^16.8.23",
+    "typescript": "^3.5.3"
+  }
+}
