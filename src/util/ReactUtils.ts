@@ -7,7 +7,11 @@
  * @date 2019-7-26 15:20
  */
 import {SyntheticEvent} from "react";
+import {types} from "util";
 
+/**
+ * React Utils
+ */
 export class ReactUtils {
 
   /**
@@ -16,16 +20,18 @@ export class ReactUtils {
    */
   public static getString(
     value: SyntheticEvent<HTMLInputElement, Event> | string | undefined
-  ): Promise<string | SyntheticEvent<HTMLInputElement, Event>> {
+  ): string {
 
     if(value === undefined) {
-      return Promise.resolve('');
+      return '';
     }
 
-    if(typeof value !== 'string') {
-      return Promise.reject(<SyntheticEvent<HTMLInputElement, Event>>value);
+    const typeStr = typeof value;
+
+    if(typeStr === 'string') {
+      return <string>value;
     }
 
-    return Promise.resolve(<string>value);
+    return typeStr;
   }
 }
